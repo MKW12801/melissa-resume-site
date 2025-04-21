@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="s3://www.mkwdd.com/index.html" />
-
     <meta charset="utf-8" />
     <title>Resume - Melissa K. Williams</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -23,41 +20,34 @@
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
-
       h1 {
         text-align: center;
         color: #3c6382;
         font-size: 2.8em;
         margin-bottom: 10px;
       }
-
       .contact-info {
         text-align: center;
         margin-bottom: 30px;
         font-size: 1.1em;
         color: #555;
       }
-
       .contact-info p {
         margin: 5px 0;
       }
-
       a {
         color: #3c6382;
         text-decoration: none;
         font-weight: bold;
       }
-
       a:hover {
         text-decoration: underline;
       }
-
       hr {
         border: none;
         border-top: 3px solid #60a3bc;
         margin: 20px 0;
       }
-
       h2 {
         font-size: 2em;
         color: #3c6382;
@@ -66,13 +56,11 @@
         margin-bottom: 20px;
         text-transform: uppercase;
       }
-
       h3 {
         font-size: 1.4em;
         color: #3c6382;
         margin-top: 20px;
       }
-
       .section {
         margin-bottom: 35px;
         padding: 20px;
@@ -81,36 +69,30 @@
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
-
       .job-title {
         font-weight: bold;
         color: #3c6382;
         font-size: 1.2em;
       }
-
       .job-info {
         font-style: italic;
         color: #888;
         margin-bottom: 10px;
       }
-
       ul {
         margin-top: 10px;
         padding-left: 20px;
         list-style: disc;
       }
-
       ul.skills-list {
         list-style: none;
         padding-left: 0;
         columns: 2;
         column-gap: 40px;
       }
-
       ul.skills-list li {
         margin-bottom: 10px;
       }
-
       p {
         margin: 10px 0;
       }
@@ -149,7 +131,6 @@
     <!-- Experience -->
     <div class="section" id="experience">
       <h2>Experience</h2>
-
       <div class="job">
         <p class="job-title">Technical Support Specialist</p>
         <p class="job-info">University of Miami | Miami, FL (1997 – Present)</p>
@@ -182,7 +163,6 @@
             functionality and develop user resources and training materials.
           </li>
         </ul>
-
         <h3>Key Achievements</h3>
         <ul>
           <li>
@@ -217,8 +197,8 @@
       <h2>Certifications</h2>
       <ul>
         <li>
-          <strong>AWS Certified Cloud Practitioner</strong> (Expected
-          Completion: January 2025)<br />
+          <strong>AWS Certified Cloud Practitioner</strong> (Expected Completion:
+          January 2025)<br />
           Understanding of AWS cloud fundamentals, architecture principles, and
           key services.
         </li>
@@ -239,27 +219,19 @@
         <li>Training Material Development</li>
       </ul>
     </div>
+
     <p>Visitors: <span id="visitor-count">Loading...</span></p>
     <script>
       function updateVisitorCount() {
-        // Get current count from local storage (temporary storage)
         let count = localStorage.getItem("visitorCount");
-
-        // If there's no stored count, start at 1
         if (!count) {
           count = 1;
         } else {
-          count = parseInt(count) + 1; // Increase count
+          count = parseInt(count) + 1;
         }
-
-        // Save the updated count
         localStorage.setItem("visitorCount", count);
-
-        // Display the count on the page
         document.getElementById("visitor-count").innerText = count;
       }
-
-      // Run function on page load
       updateVisitorCount();
     </script>
   </body>
