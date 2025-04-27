@@ -25,5 +25,7 @@ jobs:
         aws s3 sync . s3://www.mkwdd.com --delete --exclude ".git/*" --exclude ".github/*"
 
     - name: Invalidate CloudFront Cache
+      continue-on-error: true
       run: |
-        aws cloudfront create-invalidation --distribution-id E3UJZPQKOSNWYT --paths "/*" 
+        aws cloudfront create-invalidation --distribution-id E3U3ZPQKOSNWYT --paths "/*"
+
