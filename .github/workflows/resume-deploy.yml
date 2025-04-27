@@ -7,11 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: read
+    runs-on: ubuntu-22.04   # <<<<< use 22.04 instead of latest
 
     steps:
     - name: Checkout repository
@@ -25,11 +21,9 @@ jobs:
         aws-region: us-east-1
 
     - name: Deploy static site to S3
-      uses: aws-actions/aws-cli-action@v1
-      with:
-        aws-cli-command: s3 sync . s3://www.mkwdd.com --delete --exclude ".git/*" --exclude ".github/*"
+      run: |
+        aws s3 sync . s3://www.mkwdd.com --delete --exclude ".git/*" --exclude ".github/*"
 
     - name: Invalidate CloudFront Cache
-      uses: aws-actions/aws-cli-action@v1
-      with:
-        aws-cli-command: cloudfront create-invalidation --distribution-id E3UJZPQKOSNWYT --paths "/*"
+      run: |
+        aws cloudfront create-invalidation --distribution-id E3UJZPQKOSNWYT --paths "/*"
